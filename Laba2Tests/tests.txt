@@ -1,0 +1,91 @@
+https://www.timberland.com
+
+1. Проверка появления информационной панели
+Перейти по ссылке:
+https://www.timberland.com/shop/mens-axis-peak-packable-jacket-black-a2c9p001
+Выбрать размер S
+Нажать на кнопку "ADD TO CART"
+Результат: в коде страницы должен быть div с классом "topnav-minicart-panel"
+
+2. Добавление в корзину
+Перейти по ссылке:
+https://www.timberland.com/shop/mens-axis-peak-packable-jacket-black-a2c9p001
+Выбрать размер S
+Нажать на кнопку "ADD TO CART"
+Нажать на кнопку корзины в верхнем меню слева
+Результат: в коде страницы будет div с классом "checkout-order-content"
+
+3. Добавление неверного кода дисконтной карты при оформлении заказа
+Перейти по ссылке:
+https://www.timberland.com/shop/mens-axis-peak-packable-jacket-black-a2c9p001
+Выбрать размер S
+Нажать на кнопку "ADD TO CART"
+Нажать на кнопку корзины в верхнем меню слева
+Ввести в поле "Enter Promo Code" значение "RMN20".
+Нажать на кнопку "APPLY"
+Результат: перезагрузка страницы, на новой странице должна быть надпись "WE'RE SORRY, BUT THAT'S NOT A VALID PROMO CODE. PROMO CODES ARE CASE SENSITIVE. PLEASE VERIFY THE CODE AND TRY AGAIN."
+
+4. Добавление товара в корзину, проверка счетчика
+Перейти по ссылке:
+https://www.timberland.com/shop/mens-axis-peak-packable-jacket-black-a2c9p001
+Выбрать размер S
+Нажать на кнопку "ADD TO CART"
+Результат: счетчик вверху справа на иконке корзины должен увеличиться на 1.
+
+5. Попытка сохранения в список желаний (wishlist) без авторизации на сайте
+Перейти по ссылке:
+https://www.timberland.com/shop/mens-axis-peak-packable-jacket-black-a2c9p001
+Выбрать размер S
+Нажать на кнопку "ADD TO CART"
+Нажать на кнопку корзины в верхнем меню слева
+Нажать на кнопку "Save to Wish List"
+Результат: появление в коде сайта параграфа p с классами "message page-message-text page-messaging-message success" и текстом "Your items have been moved to your wish list. Please sign in to view your".
+
+6. Проверка пустой корзины 
+Перейти по ссылке:
+https://www.timberland.com/shop/mens-axis-peak-packable-jacket-black-a2c9p001
+Выбрать размер S
+Нажать на кнопку "ADD TO CART"
+Нажать на кнопку корзины в верхнем меню слева
+Нажать на кнопку "Remove Item"
+Результат: перезагрузка страницы; в коде будет заголовок h2 с классом "page-title" и надписью внутри "THERE ARE NO ITEMS IN YOUR CART".
+
+7. Изменение количество товара
+Перейти по ссылке:
+https://www.timberland.com/shop/mens-axis-peak-packable-jacket-black-a2c9p001
+Выбрать размер S
+Нажать на кнопку "ADD TO CART"
+Нажать на кнопку корзины в верхнем меню слева
+Выбрать в выпадающем списке "Quantity" значение 2.
+Результат: значение тега p внутри div с классом "item-detail-total item-detail-total-js small-6 medium-3 large-1 columns" должно быть равно "$296.00".
+
+8. Изменение  выбранного товара в корзине
+Перейти по ссылке:
+https://www.timberland.com/shop/mens-axis-peak-packable-jacket-black-a2c9p001
+Выбрать размер S
+Нажать на кнопку "ADD TO CART"
+Нажать на кнопку корзины в верхнем меню слева
+Нажать на кнопку "Edit"
+Выбрать в выпадающем списке "Size" значение M
+Нажать кнопку "UPDATE"
+Результат: содержимое тега dd с классом "item-detail-attr" должно принять значение "M"
+
+9. Проверка введенных пользователем данных
+Перейти по ссылке:
+https://www.timberland.com/shop/mens-axis-peak-packable-jacket-black-a2c9p001
+Выбрать размер S
+Нажать на кнопку "ADD TO CART"
+Нажать на кнопку корзины в верхнем меню слева
+Нажать на кнопку "SECURE CHECKOUT"
+В поле "*Enter your email address" ввести "hello" и нажать Enter.
+Результат: появление всплывающего уведомления с надписью "Адрес электронной почты должен содержать символ "@". Похоже, вы его пропустили: hello."
+
+10. Вход на сайт с неверными данными
+Перейти по ссылке:
+https://www.timberland.com/shop/mens-axis-peak-packable-jacket-black-a2c9p001
+Выбрать размер S
+Нажать на кнопку "ADD TO CART"
+Нажать на кнопку корзины в верхнем меню слева
+Нажать на кнопку "SECURE CHECKOUT"
+В поле "*Email address" ввести "hello@gmail.com", в поле "*Password" и нажать Enter.
+Результат: перезагрузка страницы и появление надписи "EITHER THE LOGIN ID OR PASSWORD YOU'VE ENTERED IS INCORRECT. PLEASE TRY AGAIN.". В коде страницы надпись находится в теге p с классом"message page-message-text page-messaging-message error".
