@@ -3,8 +3,10 @@ package plane;
 import model.ClassificationLevel;
 import model.ExperimentalTypes;
 
+import java.util.Objects;
+
 public class ExperimentalPlane extends Plane {
-    private ExperimentalTypes type;
+    private final ExperimentalTypes type;
     private ClassificationLevel classificationLevel;
 
     public ExperimentalPlane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity,
@@ -13,6 +15,8 @@ public class ExperimentalPlane extends Plane {
         this.type = type;
         this.classificationLevel = classificationLevel;
     }
+
+    public ExperimentalTypes getExperimentalPlaneType() { return type; }
 
     public ClassificationLevel getClassificationLevel(){
         return classificationLevel;
@@ -27,7 +31,7 @@ public class ExperimentalPlane extends Plane {
     }
 
     @Override public int hashCode() {
-        return super.hashCode();
+        return Objects.hash(type, classificationLevel);
     }
 
     @Override public String toString() { return String.format("experimentalPlane{ model=\'%s\' }", model); }

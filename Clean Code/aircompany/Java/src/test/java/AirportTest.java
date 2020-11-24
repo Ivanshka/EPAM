@@ -11,7 +11,7 @@ import plane.PassengerPlane;
 import plane.Plane;
 
 public class AirportTest {
-    private static List<Plane> planes = Arrays.asList(
+    private static final List<Plane> planes = Arrays.asList(
             new PassengerPlane("Boeing-737", 900, 12000, 60500, 164),
             new PassengerPlane("Boeing-737-800", 940, 12300, 63870, 192),
             new PassengerPlane("Boeing-747", 980, 16100, 70500, 242),
@@ -30,7 +30,7 @@ public class AirportTest {
             new ExperimentalPlane("Ryan X-13 Vertijet", 560, 307, 500, ExperimentalTypes.VERTICAL_TAKE_OFF_AND_LANDING, ClassificationLevel.TOP_SECRET)
     );
 
-    private static PassengerPlane planeWithMaxPassengerCapacity = new PassengerPlane("Boeing-747",
+    private static final PassengerPlane planeWithMaxPassengerCapacity = new PassengerPlane("Boeing-747",
             980, 16100, 70500, 242);
 
     public boolean isNextPlaneMaxLoadCapacityIsHigherThanCurrent(List<? extends Plane> planes) {
@@ -57,7 +57,7 @@ public class AirportTest {
     public void getPassengerPlaneWithMaxCapacityTest() {
         Airport airport = new Airport(planes);
         PassengerPlane expectedPlaneWithMaxPassengersCapacity = airport.getPassengerPlaneWithMaxPassengersCapacity();
-        Assert.assertTrue(expectedPlaneWithMaxPassengersCapacity.equals(planeWithMaxPassengerCapacity));
+        Assert.assertEquals(planeWithMaxPassengerCapacity, expectedPlaneWithMaxPassengersCapacity);
     }
 
     @Test
@@ -78,6 +78,6 @@ public class AirportTest {
     public void experimentalPlanesHasClassificationLevelHigherThanUnclassifiedTest() {
         Airport airport = new Airport(planes);
         List<ExperimentalPlane> experimentalPlanes = airport.getExperimentalPlanes();
-        Assert.assertFalse(experimentalPlanes.size() == 0);
+        Assert.assertNotEquals(experimentalPlanes.size(), 0);
     }
 }
