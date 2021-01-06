@@ -40,7 +40,6 @@ public class Item {
 
     public String getName() { return name; }
     public String getSize() { return size; }
-
     public int getAmount() {
         return amount;
     }

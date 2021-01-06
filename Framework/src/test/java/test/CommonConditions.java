@@ -19,7 +19,7 @@ public class CommonConditions {
         DriverSingleton.deleteAllCookies();
     }
 
-    //@AfterClass(alwaysRun = true)
+    @AfterClass(alwaysRun = true)
     public void dispose(){
         DriverSingleton.closeDriver();
     }
