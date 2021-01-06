@@ -32,12 +32,4 @@ public class ItemCreator {
 
         return  TestDataReader.getTestData(itemUri);
     }
-
-    public static String getUri(String orderNumber){
-        orderNumber = orderNumber.toLowerCase();
-
-        String itemUri = resolveTemplate(ITEM_URI_TEMPLATE, orderNumber);
-
-        return  TestDataReader.getTestData(itemUri);
-    }
 }

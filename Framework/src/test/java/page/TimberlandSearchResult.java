@@ -58,14 +58,14 @@ public class TimberlandSearchResult extends AbstractPage {
 
         return this;
     }
-
+/*
     public TimberlandSearchResult setCountOfItems(int count) {
         waitUntilElementIsClickableAndClickAvoidModalWindow(selectQuantity);
         waitUntilElementIsClickable(By.cssSelector(resolveTemplate(COUNT_TEMPLATE, Integer.toString(count)))).click();
 
         return this;
     }
-
+*/
     public TimberlandBagPage openCart(){
         waitUntilAjaxCompleted();
         waitUntilElementIsClickableAndClickAvoidModalWindow(openBagButton);

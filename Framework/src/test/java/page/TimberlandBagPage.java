@@ -16,8 +16,9 @@ public class TimberlandBagPage extends AbstractPage {
     public static final String HOMEPAGE_URL = "https://timberland.com/";
 
     String itemNameTemplate = "//div[%s]/div[2]/div[1]/a/h3";
-    String numberOfItemTemplate = "//div[contains(@class,'product_title')]/h3/*[contains(@id, \"OrderItemDetailsf_div_2_\")]";
-    String itemDeleteTemplate = "//*[@id=\"WC_OrderItemDetailsf_links_2_%d\"]";
+    String numberOfItemTemplate = "//div[contains(@class, \"checkout-item-table-item\") and contains(@class," +
+            " \"checkout-item-table-item-js\")]";
+    String itemDeleteTemplate = "//div/div[%s]/div[2]/div[1]/div[3]/p/a[2]";
     String itemCostTemplate = "//div[%s]/div[2]/div[3]/p";
     String itemSizeTemplate = "//div[%s]/div[2]/div[1]/dl/dd[1]";
     String countOfItemTemplate = "//div[%s]/div[2]/div[2]/form/select";
@@ -105,6 +106,7 @@ public class TimberlandBagPage extends AbstractPage {
     }
 
     public TimberlandBagPage removeItem(int number){
+        number++;
         WebElement removeButton = waitUntilPresenceOfElement(By.xpath(resolveTemplate(itemDeleteTemplate, number)));
 
         removeButton.click();
