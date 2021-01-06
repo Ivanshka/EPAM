@@ -2,7 +2,9 @@ package test;
 
 import driver.DriverSingleton;
 import model.Item;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.log4testng.Logger;
 import page.TimberlandBagPage;
 import page.TimberlandHomePage;
 import service.ItemCreator;
@@ -14,8 +16,12 @@ import static util.Resolver.resolveDiscount;
 
 public class TimberlandCartTest extends CommonConditions {
 
+    static Logger log = Logger.getLogger(TimberlandCartTest.class);
+
     @Test
     public void addItemToCartTest(){
+        log.info("Test \"addItemToCartTest\" is started!");
+
         Item expectedItem = ItemCreator.withCredentialsFromProperty("first");
 
         // char's replacing for normal searching
@@ -34,6 +40,8 @@ public class TimberlandCartTest extends CommonConditions {
 
     @Test
     public void addManyItemsToCartTest() {
+        log.info("Test \"addManyItemsToCartTest\" is started!");
+
         Item expectedItem = ItemCreator.withCredentialsFromProperty("first");
         expectedItem.changeAmount(3);
 
@@ -58,6 +66,8 @@ public class TimberlandCartTest extends CommonConditions {
 
     @Test
     public void addTwoDifferentItemsToCartTest(){
+        log.info("Test \"addTwoDifferentItemsToCartTest\" is started!");
+
         Item firstExpectedItem = ItemCreator.withCredentialsFromProperty("first");
         String firstName = firstExpectedItem.getName().replace('™',' ');
 
@@ -90,6 +100,8 @@ public class TimberlandCartTest extends CommonConditions {
 
     @Test
     public void removeItemFromCartTest() {
+        log.info("Test \"removeItemFromCartTest\" is started!");
+
         Item expectedItem = ItemCreator.withCredentialsFromProperty("first");
         String name = expectedItem.getName().replace('™',' ');
 

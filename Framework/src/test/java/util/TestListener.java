@@ -7,6 +7,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.log4testng.Logger;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,11 +27,13 @@ public class TestListener implements ITestListener {
                 .getInstance())
                 .getScreenshotAs(OutputType.FILE);
 
+        Logger log = Logger.getLogger(TestListener.class);
+
         try {
             FileUtils.copyFile(screenCapture,
                     new File(String.format(".//target/screenshots/%s%s",getCurrentTime(), ".png")));
         } catch (IOException ex){
-            //log.error("Failed to save screenshot: " + ex.getMessage());
+            log.error("Failed to save screenshot: " + ex.getMessage());
         }
     }
 
